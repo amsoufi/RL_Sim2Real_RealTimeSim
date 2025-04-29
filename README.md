@@ -89,6 +89,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 If you find this project useful, please cite:
 
-> A. M. S. Enayati et al., "[Robust Policy Learning for Robotic Manipulation using Domain Randomization and Real-Time Simulation](https://ieeexplore.ieee.org/abstract/document/10196019)", IEEE, 2023.
+> A. M. S. Enayati et al., "[Facilitating Sim-to-Real by Intrinsic Stochasticity of Real-Time Simulation in Reinforcement Learning for Robot Manipulation](https://ieeexplore.ieee.org/abstract/document/10196019)", IEEE, 2023.
 
 ---
