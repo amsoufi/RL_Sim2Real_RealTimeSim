@@ -1,0 +1,9 @@
+gym
+joblib
+matplotlib
+mpi4py
+numpy
+pybullet
+scipy
+tensorflow
+torch
