@@ -28,10 +28,6 @@ def main():
         t = 0.000001
         while True:
             t += 0.0000001
-            # action = np.array([np.random.uniform(-1, 1),
-            #                    np.random.uniform(-1, 1),
-            #                    np.random.uniform(-1, 1),
-            #                    np.random.uniform(-1, 1)])
             action = np.array([0+t, 0+t, 0+t])
             ob, _, done, _ = env.step(action)
 

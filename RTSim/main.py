@@ -19,24 +19,11 @@ def main():
 
             ac_kwargs = dict(hidden_sizes=netarc, activation=torch.nn.ReLU) #create actor-critic network
 
-            logger_kwargs = dict(output_dir='data2/to/netarc' + str(i + 1), exp_name='kinova') #filepath for saving
+            logger_kwargs = dict(output_dir='path/to/output_dir' + str(i + 1), exp_name='kinova') #filepath for saving
                                                                                         #agents and logging progress
 
             ppo(env_fn=env_fn, ac_kwargs=ac_kwargs, max_ep_len=200, steps_per_epoch=1000, epochs=1000,
                 logger_kwargs=logger_kwargs) #runs the training process with specified hyperparameters
-
-    elif what_to_do == 'play':
-        ac = torch.load('data3/to/netarc1/ppo_model.pt') # loads the agent model
-        ac.pi.eval()
-        env = gym.make('kinova-v0', render=True) # make env with rendering
-
-        for _ in range(5): #runs agent for 5 episodes
-            o = env.reset()
-            d = False
-            while not d:
-                action = ac.act(torch.tensor(o, dtype=torch.float32))  #collects action from agent model
-                o, r, d, _ = env.step(action) #applys action to environment
-                # print(o)
 
     else:
         # this is for testing the env

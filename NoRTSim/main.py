@@ -17,23 +17,11 @@ def main():
 
         ac_kwargs = dict(hidden_sizes=[64, 128, 64], activation=torch.nn.ReLU) #neural network for actor-critic network
 
-        logger_kwargs = dict(output_dir='path/to/output_dir3imprecise', exp_name='kinova') #output_dir is filepath for
+        logger_kwargs = dict(output_dir='path/to/output_dir', exp_name='kinova') #output_dir is filepath for
                                                                                 # saving agent and logging progress
 
         ppo(env_fn=env_fn, ac_kwargs=ac_kwargs, max_ep_len=200, steps_per_epoch=1000, epochs=1000,
             logger_kwargs=logger_kwargs)  #runs the training process with specified hyperparameters
-
-    elif what_to_do == 'play':
-        ac = torch.load('path/to/output_dir2/ppo_model.pt') # loads the agent model
-        ac.pi.eval()
-        env = gym.make('kinova-v0') #make env
-
-        for _ in range(5): #runs agent for 5 episodes
-            o = env.reset() #reset env after an episode
-            d = False
-            while not d:
-                action = ac.act(torch.tensor(o, dtype=torch.float32)) #collects action from agent model
-                o, r, d, _ = env.step(action) #applys action to environment
 
     else:
         # This else is used for testing environment by making what_to_do = ''

@@ -34,6 +34,7 @@ Each environment contains its own `main.py` as the starting point.
    ```
 
 2. **Install the requirements**:
+   This project was developed and tested with Python 3.6
 
    ```bash
    pip install -r requirements.txt
